@@ -1,0 +1,52 @@
+favicon: "favicon.ico"
+AuthorName: "昏晓."
+Subtitle: 静待风归.
+
+Footer:
+  since: 2026
+
+relativeURLs: true
+
+article:
+  headingAnchor: false
+  math: true
+  toc: true
+  readingTime: true
+
+mainSections:
+  - post
+
+widgets:
+  homepage:
+    - type: search
+    - type: archives
+      param:
+        limit: 5
+    - type: categories
+      param:
+        limit: 10
+    - type: tag-cloud
+      param:
+        limit: 10
+
+  page:
+    - type: toc
+
+sidebar:
+  emoji: 🍥
+  subtitle: 身虽仍在人间，心却随星陨去.
+  avatar: img/avatar.jpg
+
+comments:
+  enabled: true
+  provider: "utterances"
+
+  utterances:
+    repo: "Mount1428/dusk_blog"
+    issueTerm: "pathname"
+    label: "💬 评论"
+
+  beaudar:
+    repo: "Mount1428/dusk_blog"
+    issueTerm: "pathname"
+    label: "💬 评论"

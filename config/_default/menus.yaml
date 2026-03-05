@@ -1,0 +1,39 @@
+main:
+  - identifier: home
+    name: 主页
+    url: /
+    weight: -100
+    params:
+      icon: home
+  - identifier: categories
+    name: 分类
+    url: /categories/
+    weight: 10
+    params:
+      icon: categories
+  - identifier: tags
+    name: 标签
+    url: /tags/
+    weight: 20
+    params:
+      icon: tag
+
+social:
+  - identifier: github
+    name: GitHub
+    url: https://github.com/Mount1428
+    weight: 10
+    params:
+      icon: brand-github
+  - identifier: qq
+    name: QQ
+    url: https://wpa.qq.com/msgrd?v=3&uin=2020932803&site=qq&menu=yes
+    weight: 20
+    params:
+      icon: brand-qq
+  - identifier: email
+    name: 邮箱
+    url: mailto:18159593130@163.com
+    weight: 30
+    params:
+      icon: messages

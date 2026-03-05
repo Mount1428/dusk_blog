@@ -1,0 +1,10 @@
+goldmark:
+  extensions:
+    passthrough:
+      enable: true
+      delimiters:
+        block:
+          - ["\\[", "\\]"]
+          - ["$$", "$$"]
+        inline:
+          - ["\\(", "\\)"]
