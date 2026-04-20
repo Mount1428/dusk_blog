@@ -199,25 +199,25 @@ $$\chi^2 = \tilde y^\top (H P_{k|k-1} H^\top + R)^{-1} \tilde y$$
 
 测试平台：达妙MC-02（STM32H723VGT6 500MHz），启用ICache和DCache。
 
-![静止状态Roll](静止状态Roll.png)  ![静止状态Pitch](静止状态Pitch.png)  ![静止状态Yaw](静止状态Yaw.png)
+![静止状态Roll](https://cdn.mountdusk.top/img/%E9%9D%99%E6%AD%A2%E7%8A%B6%E6%80%81Roll.png)  ![静止状态Pitch](https://cdn.mountdusk.top/img/%E9%9D%99%E6%AD%A2%E7%8A%B6%E6%80%81Pitch.png)  ![静止状态Yaw](https://cdn.mountdusk.top/img/%E9%9D%99%E6%AD%A2%E7%8A%B6%E6%80%81Yaw.png)
 
-{{< video src="静止状态录屏.mp4" >}}
+{{< video src="https://cdn.mountdusk.top/img/%E9%9D%99%E6%AD%A2%E7%8A%B6%E6%80%81%E5%BD%95%E5%B1%8F.webm" >}}
 
 静止状态下Roll轴和Pitch轴的变化区间在0.7°左右，Yaw轴漂移在短时间内基本注意不到。
 
-![静止1小时后Yaw](静止1小时后读数.png)
+![静止1小时后Yaw](https://cdn.mountdusk.top/img/%E9%9D%99%E6%AD%A21%E5%B0%8F%E6%97%B6%E5%90%8E%E8%AF%BB%E6%95%B0.png)
 
 Yaw轴零飘在27°/hour左右（0.45°/min），对于RM场景已经足够使用。增加温控后理论上可以更低。
 
-![典型计算时间](计算延迟.png)
+![典型计算时间](https://cdn.mountdusk.top/img/%E8%AE%A1%E7%AE%97%E5%BB%B6%E8%BF%9F.png)
 
 仅预测过程一次计算大约90us，预测+更新一次计算190us左右。考虑到H7和Cache的加成，这个延迟表现并不算好，应该是笔者本人在矩阵计算等方面的设计较差导致（使用的是笔者自己写的矩阵库，使用C++表达式模板，有很多的短函数调用）。使用Release模式编译后预测+更新一次计算大约为30us。
 
 由于笔者没有方便测试的设备，对于运动状态下的效果只能通过手动甩动IMU测得。
 
-{{< video src="快速甩动录屏.mp4" >}}
+{{< video src="https://cdn.mountdusk.top/img/%E5%BF%AB%E9%80%9F%E7%94%A9%E5%8A%A8%E5%BD%95%E5%B1%8F.webm" >}}
 
-![快速甩动后收敛](快速甩动后收敛.png)
+![快速甩动后收敛](https://cdn.mountdusk.top/img/%E5%BF%AB%E9%80%9F%E7%94%A9%E5%8A%A8%E5%90%8E%E6%94%B6%E6%95%9B.png)
 
 由于笔者并没有给很严格的卡方门限，运动过程中的动态加速度的分离效果还是较差，但同时也获得了很快的静止后姿态收敛（50ms以内）。
 
